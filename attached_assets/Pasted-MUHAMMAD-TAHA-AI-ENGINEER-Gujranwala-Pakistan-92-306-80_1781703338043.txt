@@ -1,0 +1,43 @@
+MUHAMMAD TAHA 
+AI ENGINEER 
+Gujranwala, Pakistan  |  +92 306 8074624  |  muhammadtaha0154@gmail.com  |  github.com/taha463  |  linkedin.com/in/muhammadtaha02 
+SUMMARY 
+Software Engineering student focused on building robust AI architectures, specifically Multi-Agent Systems and Neural 
+Networks. Experienced in developing full-stack applications from Figma prototypes to production environments. Committed to 
+rigorous technical logic, optimizing backend infrastructure, and refusing to settle for average project results. 
+TECHNICAL SKILLS 
+AI/ML:  Python, PyTorch, Hugging Face, Transformers, Unsloth, RAG Pipelines, Groq API. 
+Front-End/Design:  React.js, Tailwind, JavaScript, Figma, UX Research, Wireframing, Prototyping. 
+Infrastructure:  FastAPI, Redis, Celery, Docker, Firebase, Supabase, Git, Cypress. 
+EXPERIENCE 
+Nexium | AI Web Dev Intern 
+Jul–Aug 2025 
+• Integrated LLM APIs into production web systems, 
+shipping React.js components end-to-end. 
+• Translated high-fidelity Figma specifications into 
+responsive UI components within strict agile sprint cycles. 
+PROJECTS 
+Elevvo Pathways | UX/Web Dev Intern 
+May–Jun 2025 
+• Owned the full design-to-code pipeline, translating UX 
+research into deployed frontend architecture. 
+• Delivered functional front-end components and design 
+artifacts specifically tailored for an ed-tech platform. 
+Mizan — Adversarial Legal Reasoning System 
+Architected an adversarial framework built on a Mistral base to aggressively reduce hallucinations in legal reasoning. Developed a 
+'courtroom logic' gating module with causal cross-attention to strictly evaluate LLM outputs against source depositions. 
+Tech Stack: Python, LLM Inference, Causal Cross-Attention 
+FEHM.AI — Autonomous Socratic Tutoring Engine 
+Built an autonomous tutoring engine utilizing a 4-layer agent swarm (Supervisor, Teacher, Critic, Librarian) designed to prevent 
+'code dumps' and force conceptual reasoning. Integrated a Redis and Celery backend to track real-time frustration indices and 
+dynamically adapt teaching prompts. 
+Tech Stack: Python, Redis, Celery, Multi-Agent LLM, Affective Computing 
+Aegis — AI Flood Detection & Disaster Assistance 
+Engineered a real-time prediction pipeline for the Indus Basin using GEOGloWS V2 and NASA Power data. Designed an 
+automated routing system mapping 8km danger zones and 25km evacuation targets, paired with a real-time bilingual chatbot for 
+rescue operations. 
+Tech Stack: React/Vite, FastAPI, Firebase, Groq LLM, Python 
+EDUCATION 
+B.Sc. Software Engineering | HITEC University, Taxila | Sep 2022 – July 2026 | CGPA: 3.20 / 4.00 
+CERTIFICATIONS 
+Google UX Design Professional Certificate | Google / Coursera | Aug 202
