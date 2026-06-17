@@ -1,0 +1,31 @@
+kind = "video"
+previewPath = "/portfolio-video/"
+title = "Muhammad Taha — Portfolio Reel"
+version = "1.0.0"
+id = "artifacts/portfolio-video"
+router = "path"
+
+[[integratedSkills]]
+name = "video-js"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/portfolio-video/" ]
+localPort = 23465
+
+[services.development]
+run = "pnpm --filter @workspace/portfolio-video run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/portfolio-video", "run", "build" ]
+publicDir = "artifacts/portfolio-video/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "23465"
+BASE_PATH = "/portfolio-video/"
