@@ -274,7 +274,7 @@ function ProjectImage({
           src={src}
           alt={alt}
           style={{ y }}
-          className={`w-full h-[115%] object-cover ${imgPosition} scale-100`}
+          className={`absolute inset-0 w-full h-full object-cover ${imgPosition}`}
         />
       </div>
     </div>
@@ -406,7 +406,7 @@ function DesignCard({ project, index }: { project: (typeof designProjects)[0]; i
             <img
               src={project.image}
               alt={`${project.title} design`}
-              className={`w-full h-[115%] object-cover ${project.imgPosition} transition-transform duration-700 group-hover:scale-[1.03]`}
+              className={`absolute inset-0 w-full h-full object-cover ${project.imgPosition} transition-transform duration-700 group-hover:scale-[1.03]`}
             />
             {/* Hover overlay */}
             <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/25 transition-colors duration-400 flex items-center justify-center">
@@ -494,19 +494,18 @@ export default function Home() {
       {/* ── HERO ─────────────────────────────────────────────────────────────── */}
       <section className="relative min-h-[100dvh] flex flex-col justify-between px-6 md:px-12 lg:px-16 pt-24 pb-10 overflow-hidden">
 
-        {/* Warm gradient blobs */}
+        {/* Subtle ambient glow */}
         <div className="pointer-events-none absolute inset-0 overflow-hidden">
           <motion.div
-            className="absolute top-[-10%] left-[-5%] w-[55vw] h-[55vw] rounded-full bg-primary/7 blur-[180px]"
-            animate={{ scale: [1, 1.08, 1], opacity: [0.6, 1, 0.6] }}
+            className="absolute top-[-10%] left-[-5%] w-[55vw] h-[55vw] rounded-full bg-primary/4 blur-[240px]"
+            animate={{ scale: [1, 1.08, 1], opacity: [0.4, 0.7, 0.4] }}
             transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
           />
           <motion.div
-            className="absolute bottom-[-15%] right-[-8%] w-[45vw] h-[45vw] rounded-full bg-secondary/50 blur-[160px]"
-            animate={{ scale: [1, 1.06, 1], opacity: [0.5, 0.8, 0.5] }}
+            className="absolute bottom-[-15%] right-[-8%] w-[45vw] h-[45vw] rounded-full bg-border/60 blur-[200px]"
+            animate={{ scale: [1, 1.06, 1], opacity: [0.3, 0.5, 0.3] }}
             transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 2 }}
           />
-          <div className="absolute top-[35%] right-[20%] w-[30vw] h-[30vw] rounded-full bg-accent/10 blur-[120px]" />
         </div>
 
         {/* Top row — year / role tag */}
@@ -795,7 +794,7 @@ export default function Home() {
           MT
         </div>
 
-        <div className="pointer-events-none absolute top-[-20%] left-[-8%] w-[50vw] h-[50vw] rounded-full bg-primary/10 blur-[180px]" />
+        <div className="pointer-events-none absolute top-[-20%] left-[-8%] w-[50vw] h-[50vw] rounded-full bg-primary/4 blur-[240px]" />
 
         <div className="max-w-6xl mx-auto relative z-10">
           <motion.div
