@@ -2,12 +2,6 @@ uploads = []
 outputs = []
 
 [[generated]]
-id = "fBrHBCOyvcmLpNPti_x6J"
-uri = "file://artifacts/portfolio-video/public/images/hero.png"
-type = "image"
-title = "Abstract clean elegant 3d shapes"
-
-[[generated]]
 id = "kF10IRaajsyxKOo5rh6IS"
 uri = "file://artifacts/portfolio-video/public/images/aegis.png"
 type = "image"
