@@ -47,3 +47,7 @@ Thumbs.db
 # Replit
 .cache/
 .local/
+
+# Video frame capture artifacts
+video-frames/
+video-recordings/
