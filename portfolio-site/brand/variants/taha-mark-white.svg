@@ -1,0 +1,42 @@
+<svg fill="#ffffff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-labelledby="title-a"><title>Muhammad Taha Brand Mark</title>
+  <title id="title-a">Concept A — The Arbitration Aperture Monogram</title>
+  <g id="symbol">
+    <!-- Outer monolithic MT glyph with central aperture cut out -->
+    <path fill="#ffffff" fill-rule="evenodd" d="
+      M 36 48
+      L 220 48
+      C 224.4 48 228 51.6 228 56
+      L 228 80
+      C 228 84.4 224.4 88 220 88
+      L 196 88
+      L 196 196
+      C 196 202.6 190.6 208 184 208
+      L 164 208
+      C 157.4 208 152 202.6 152 196
+      L 152 118
+      L 142 128
+      L 142 196
+      C 142 202.6 136.6 208 130 208
+      L 126 208
+      C 119.4 208 114 202.6 114 196
+      L 114 128
+      L 104 118
+      L 104 196
+      C 104 202.6 98.6 208 92 208
+      L 72 208
+      C 65.4 208 60 202.6 60 196
+      L 60 88
+      L 36 88
+      C 31.6 88 28 84.4 28 80
+      L 28 56
+      C 28 51.6 31.6 48 36 48
+      Z
+      M 104 88
+      L 152 88
+      L 128 112
+      Z
+    "/>
+    <!-- The Focal Empirical Arbitration Core (Tangerine Truth Dot) -->
+    <circle cx="128" cy="156" r="14" fill="#ffffff"/>
+  </g>
+</svg>

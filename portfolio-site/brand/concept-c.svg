@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-labelledby="title-c">
+  <title id="title-c">Concept C — The Empirical Stepped Monogram</title>
+  <g id="symbol">
+    <!-- Modular architectural stepped MT frame -->
+    <path fill="#1a1816" fill-rule="evenodd" d="
+      M 40 56
+      L 216 56
+      C 220.4 56 224 59.6 224 64
+      L 224 84
+      C 224 88.4 220.4 92 216 92
+      L 180 92
+      L 180 196
+      C 180 200.4 176.4 204 172 204
+      L 152 204
+      C 147.6 204 144 200.4 144 196
+      L 144 144
+      L 138 144
+      L 138 196
+      C 138 200.4 134.4 204 130 204
+      L 126 204
+      C 121.6 204 118 200.4 118 196
+      L 118 144
+      L 112 144
+      L 112 196
+      C 112 200.4 108.4 204 104 204
+      L 84 204
+      C 79.6 204 76 200.4 76 196
+      L 76 92
+      L 40 92
+      C 35.6 92 32 88.4 32 84
+      L 32 64
+      C 32 59.6 35.6 56 40 56
+      Z
+      M 104 92
+      L 152 92
+      L 152 118
+      L 104 118
+      Z
+    "/>
+    <rect x="120" y="100" width="16" height="16" rx="2" fill="#e0572b"/>
+  </g>
+</svg>

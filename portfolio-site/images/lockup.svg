@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 128" width="680" height="128" role="img" aria-labelledby="lockup-title">
+  <title id="lockup-title">Muhammad Taha Horizontal Brand Lockup</title>
+  <!-- Mark centered vertically on left -->
+  <g transform="translate(16, 8) scale(0.4375)">
+    <path fill="#1a1816" fill-rule="evenodd" d="
+      M 36 48 L 220 48 C 224.4 48 228 51.6 228 56 L 228 80 C 228 84.4 224.4 88 220 88 L 196 88 L 196 196 C 196 202.6 190.6 208 184 208 L 164 208 C 157.4 208 152 202.6 152 196 L 152 118 L 142 128 L 142 196 C 142 202.6 136.6 208 130 208 L 126 208 C 119.4 208 114 202.6 114 196 L 114 128 L 104 118 L 104 196 C 104 202.6 98.6 208 92 208 L 72 208 C 65.4 208 60 202.6 60 196 L 60 88 L 36 88 C 31.6 88 28 84.4 28 80 L 28 56 C 28 51.6 31.6 48 36 48 Z M 104 88 L 152 88 L 128 112 Z
+    "/>
+    <circle cx="128" cy="156" r="14" fill="#e0572b"/>
+  </g>
+  <!-- Wordmark typography -->
+  <text x="140" y="66" font-family="'Red Hat Display', system-ui, -apple-system, sans-serif" font-weight="600" font-size="34" fill="#1a1816" letter-spacing="-0.02em">Muhammad Taha</text>
+  <text x="142" y="96" font-family="'Red Hat Mono', monospace" font-weight="500" font-size="14" fill="#716b63" letter-spacing="0.08em" text-transform="uppercase">AI Systems · Reasoning Architectures</text>
+</svg>

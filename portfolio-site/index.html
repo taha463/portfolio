@@ -1,0 +1,1014 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Muhammad Taha — AI Engineer · Multi-Agent Swarms &amp; Reasoning Systems</title>
+  <meta name="description" content="Muhammad Taha — AI Engineer &amp; Systems Builder. Specializing in Multi-Agent Swarms, Adversarial Reasoning, and Real-Time ML Pipelines. HITEC University (CGPA 3.23).">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@600;700&amp;family=Red+Hat+Text:wght@400;500;600&amp;family=Red+Hat+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <!-- GSAP Core & ScrollTrigger CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script>
+    document.documentElement.classList.add('js');
+    if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.documentElement.classList.add('stage');
+      setTimeout(() => {
+        if (!window.__fieldbookMap) document.documentElement.classList.remove('stage');
+      }, 2500);
+    }
+    let tick = 0;
+    addEventListener('resize', () => document.documentElement.style.setProperty('--tick', String(tick ^= 1)));
+  </script>
+</head>
+<body id="top">
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- ═══════════════ NEATLINE BAR NAV ═══════════════ -->
+  <header class="bar">
+    <div class="container bar__in">
+      <a class="wordmark" href="#top" aria-label="Muhammad Taha, back to top" data-magnetic id="brandWordmark">
+        <svg class="wordmark__symbol" viewBox="0 0 256 256" width="28" height="28" aria-hidden="true">
+          <path fill="currentColor" fill-rule="evenodd" d="M 36 48 L 220 48 C 224.4 48 228 51.6 228 56 L 228 80 C 228 84.4 224.4 88 220 88 L 196 88 L 196 196 C 196 202.6 190.6 208 184 208 L 164 208 C 157.4 208 152 202.6 152 196 L 152 118 L 142 128 L 142 196 C 142 202.6 136.6 208 130 208 L 126 208 C 119.4 208 114 202.6 114 196 L 114 128 L 104 118 L 104 196 C 104 202.6 98.6 208 92 208 L 72 208 C 65.4 208 60 202.6 60 196 L 60 88 L 36 88 C 31.6 88 28 84.4 28 80 L 28 56 C 28 51.6 31.6 48 36 48 Z M 104 88 L 152 88 L 128 112 Z"/>
+          <circle cx="128" cy="156" r="14" fill="var(--color-accent)"/>
+        </svg>
+        Muhammad Taha
+        <span class="wordmark__tag">AI Systems</span>
+      </a>
+      <nav class="bar__links" aria-label="Primary Navigation">
+        <a href="#systems" data-magnetic>Flagships</a>
+        <a href="#benchmarks" data-magnetic>Benchmarks</a>
+        <a href="#experience" data-magnetic>Experience &amp; CGPA</a>
+        <a href="#lab" data-magnetic>Architecture Lab</a>
+      </nav>
+      <div class="bar__end">
+        <button class="sound-toggle btn btn--sm" id="soundToggle" type="button" aria-label="Toggle haptic audio" title="Haptic click audio feedback" data-magnetic>
+          <span class="sound-icon" aria-hidden="true">🔊</span>
+          <span class="sound-label">Haptics</span>
+        </button>
+        <button class="hud-trigger btn btn--sm" id="hudTrigger" type="button" aria-label="Open System HUD / Command Palette (Cmd+K)" title="Command Palette (Cmd+K)" data-magnetic>
+          <kbd class="hud-key" aria-hidden="true">⌘K</kbd>
+          <span class="hud-label">HUD</span>
+        </button>
+        <p class="bar__status">
+          <i class="chip chip--ok"><span class="mark" style="width:7px;height:7px;margin-right:2px;background:var(--color-green);"></span>CGPA 3.23 · Open to Roles</i>
+        </p>
+        <a class="btn btn--sm btn--primary nav-dispatch-btn" href="#dispatch" data-magnetic>Get in Touch</a>
+        <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileNav">
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE / TABLET NAVIGATION DRAWER -->
+  <div class="mobile-nav" id="mobileNav" aria-hidden="true">
+    <div class="mobile-nav__backdrop" id="mobileNavBackdrop"></div>
+    <div class="mobile-nav__panel">
+      <div class="mobile-nav__head">
+        <div class="wordmark">
+          <svg class="wordmark__mark" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <rect width="16" height="16" rx="3" fill="var(--color-ink)"/>
+            <path d="M4 4.5H6.2V11.5H4V4.5Z" fill="var(--color-paper)"/>
+            <path d="M9.8 4.5H12V11.5H9.8V4.5Z" fill="var(--color-paper)"/>
+            <path d="M6.2 4.5H9.8V6.5H6.2V4.5Z" fill="var(--color-accent)"/>
+          </svg>
+          <span>Muhammad Taha</span>
+        </div>
+        <button class="mobile-nav__close" id="mobileNavClose" type="button" aria-label="Close navigation menu">&times;</button>
+      </div>
+      <nav class="mobile-nav__links">
+        <a class="mobile-nav__link" href="#systems">Flagships &amp; Systems</a>
+        <a class="mobile-nav__link" href="#benchmarks">Empirical Benchmarks</a>
+        <a class="mobile-nav__link" href="#experience">Experience &amp; CGPA</a>
+        <a class="mobile-nav__link" href="#lab">Architecture Lab</a>
+      </nav>
+      <div class="mobile-nav__foot">
+        <p class="chip chip--ok"><span class="mark" style="background:var(--color-green);"></span>CGPA 3.23 · Open to Roles</p>
+        <div class="mobile-nav__actions">
+          <a class="btn btn--primary" href="#dispatch" style="width:100%;text-align:center;">Get in Touch</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main id="main">
+
+    <!-- ═══════════════ HERO SURVEY MAP & NOTEBOOK ═══════════════ -->
+    <section class="hero" id="systems" aria-labelledby="hero-head">
+      <div class="hero__ground" aria-hidden="true">
+        <canvas class="hero__canvas"></canvas>
+      </div>
+      <canvas class="loupe" aria-hidden="true"></canvas>
+
+      <div class="container hero__grid">
+        <div class="hero__text">
+          <p class="hero__tagline"><span class="num">01</span> AI Systems Engineer · Multi-Agent Swarms &amp; Reasoning</p>
+          <h1 id="hero-head" class="hero-title-reveal" aria-label="Building autonomous AI systems and resilient deep learning models.">
+            <span class="word-mask"><span class="word-inner">Building</span></span>
+            <span class="word-mask"><span class="word-inner">autonomous</span></span>
+            <span class="word-mask"><span class="word-inner">AI</span></span>
+            <span class="word-mask"><span class="word-inner">systems</span></span>
+            <span class="word-mask"><span class="word-inner">&amp;</span></span>
+            <span class="word-mask"><span class="word-inner">resilient</span></span>
+            <span class="word-mask"><span class="word-inner">deep</span></span>
+            <span class="word-mask"><span class="word-inner">learning</span></span>
+            <span class="word-mask"><span class="word-inner">models.</span></span>
+          </h1>
+          <p class="lead">Building production AI architectures that reason before they speak. Specializing in multi-agent swarms with Redis/Celery worker queues, causal cross-attention gating to eliminate LLM hallucinations, and real-time hydrological forecasting across the Indus Basin.</p>
+          <div class="actions">
+            <a class="btn btn--primary" href="#systems">Explore Flagship Systems</a>
+            <a class="btn" href="#experience">Experience &amp; CGPA</a>
+            <a class="btn" href="#dispatch">Get in Touch</a>
+          </div>
+        </div>
+
+        <div class="hero__map" role="group" aria-label="Diagnostic frameworks and hydrological stations pinned to survey map">
+          <div class="farm">
+            <svg class="route" viewBox="0 0 1250 1000" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+              <defs>
+                <mask id="route-draw" maskUnits="userSpaceOnUse" x="0" y="0" width="1250" height="1000">
+                  <path class="route__reveal" pathLength="1" d="M525 170 C 470 210 330 280 262 346 S 180 440 162 480"/>
+                </mask>
+              </defs>
+              <path class="route__line" mask="url(#route-draw)" d="M525 170 C 470 210 330 280 262 346 S 180 440 162 480"/>
+              <circle class="route__start" cx="525" cy="170" r="6"/>
+            </svg>
+
+            <!-- PIN 1 — MIZAN (LEGAL AI) -->
+            <button class="pin is-on" type="button" data-entry="mzn" style="--u: 0.13; --v: 0.48" aria-controls="entry" aria-pressed="true">
+              <span class="pin__dot" aria-hidden="true"></span>
+              <span class="pin__tag"><span class="num">01</span> Mizan (Legal AI)</span>
+            </button>
+
+            <!-- PIN 2 — AEGIS (GEO ML) -->
+            <button class="pin" type="button" data-entry="ags" style="--u: 0.47; --v: 0.44" aria-controls="entry" aria-pressed="false">
+              <span class="pin__dot" aria-hidden="true"></span>
+              <span class="pin__tag"><span class="num">03</span> Aegis (Geo ML)</span>
+            </button>
+
+            <!-- PIN 3 — FEHM.AI SWARM -->
+            <button class="pin" type="button" data-entry="fhm" style="--u: 0.31; --v: 0.69" aria-controls="entry" aria-pressed="false">
+              <span class="pin__dot" aria-hidden="true"></span>
+              <span class="pin__tag"><span class="num">02</span> FEHM.AI (Swarm)</span>
+            </button>
+
+            <!-- PIN 4 — 3D TENSOR CORE INSTRUMENT -->
+            <button class="pin" type="button" data-entry="core" style="--u: 0.62; --v: 0.28" aria-controls="entry" aria-pressed="false">
+              <span class="pin__dot pin__dot--core" aria-hidden="true"></span>
+              <span class="pin__tag"><span class="num">04</span> 3D Reasoning Core</span>
+            </button>
+          </div>
+
+          <!-- THE NOTEBOOK CARD -->
+          <div class="entry hero__entry" id="entry" data-slot="demo-1" data-alt="Framework telemetry card" data-keep>
+
+            <!-- PAGE 1: MIZAN (RAT) -->
+            <article class="entry__page" data-entry="mzn" aria-label="Mizan Adversarial Legal Reasoning Telemetry">
+              <header class="entry__head">
+                <span class="entry__kind"><i class="mark" data-kind="med" aria-hidden="true"></i>Mizan System</span>
+                <span class="entry__date num">Adversarial Gating</span>
+                <time class="entry__time num" datetime="2026-10-23T07:15">07:15</time>
+              </header>
+              <dl class="entry__cells">
+                <div><dt>Model Base</dt><dd>Mistral 7B + RAT</dd></div>
+                <div><dt>Hallucination Drop</dt><dd><span class="num">-68%</span> vs Base</dd></div>
+                <div><dt>MID Rating</dt><dd><span class="num">3.2</span> (Base: 1.1)</dd></div>
+                <div><dt>CDS / SRS Rating</dt><dd><span class="num">0.8</span> / <span class="num">0.9</span></dd></div>
+              </dl>
+            </article>
+
+            <!-- PAGE 2: AEGIS V13 (DISASTER AI) -->
+            <article class="entry__page" data-entry="ags" aria-label="Aegis V13 Real-Time Flood Prediction Telemetry" hidden>
+              <header class="entry__head">
+                <span class="entry__kind"><i class="mark" data-kind="ags" aria-hidden="true"></i>Aegis V13 AI</span>
+                <span class="entry__date num">Real-Time Routing</span>
+                <time class="entry__time num" datetime="2026-10-23T09:20">09:20</time>
+              </header>
+              <dl class="entry__cells">
+                <div><dt>Nowshera D1</dt><dd><span class="num">KGE 0.89</span> / <span class="num">0.84</span></dd></div>
+                <div><dt>Mangla D1</dt><dd><span class="num">Recall 0.87</span> / <span class="num">0.76</span></dd></div>
+                <div><dt>Tarbela Inflow</dt><dd><span class="num">KGE 0.83</span> vs ED -0.57</dd></div>
+                <div><dt>Surge Gate</dt><dd>&gt;<span class="num">16,000 m³/s</span> (𝛼≈1.0)</dd></div>
+              </dl>
+            </article>
+
+            <!-- PAGE 3: FEHM.AI -->
+            <article class="entry__page" data-entry="fhm" aria-label="FEHM.AI Tutoring Swarm Telemetry" hidden>
+              <header class="entry__head">
+                <span class="entry__kind"><i class="mark" data-kind="fhm" aria-hidden="true"></i>Swarm Engine</span>
+                <span class="entry__date num">4-Agent Swarm</span>
+                <time class="entry__time num" datetime="2026-10-23T08:40">08:40</time>
+              </header>
+              <dl class="entry__cells">
+                <div><dt>Swarm Topology</dt><dd><span class="num">4</span> Agents (Supervisor/Teacher)</dd></div>
+                <div><dt>Worker Queue</dt><dd>Redis + Celery Async</dd></div>
+                <div><dt>Pedagogy Logic</dt><dd>Socratic Anti-Dump</dd></div>
+                <div><dt>Affective State</dt><dd>Frustration Gating</dd></div>
+              </dl>
+            </article>
+
+            <!-- PAGE 4: 3D REASONING TENSOR CORE INSTRUMENT -->
+            <article class="entry__page entry__page--core" data-entry="core" aria-label="Interactive 3D Reasoning Monolith Tensor Core" hidden>
+              <header class="entry__head">
+                <span class="entry__kind"><i class="mark" style="background:var(--color-accent);" aria-hidden="true"></i>3D Tensor Core</span>
+                <span class="entry__date num">Arbitration Monolith</span>
+                <time class="entry__time num">Interactive</time>
+              </header>
+              <div class="core-canvas-wrap">
+                <canvas id="tensorCanvas" width="280" height="150" aria-label="Interactive 3D Reasoning Monolith - Drag to spin"></canvas>
+                <div class="core-hint">Drag to inspect 3D arbitration tensor vertices</div>
+              </div>
+              <dl class="entry__cells">
+                <div><dt>Kernel Architecture</dt><dd>Dynamic 𝛼-Desk</dd></div>
+                <div><dt>Model Base</dt><dd>Mistral 7B + RAT</dd></div>
+                <div><dt>Surge Invariant</dt><dd class="num">&gt;16,000 m³/s</dd></div>
+                <div><dt>Diagnostics</dt><dd class="num">MID 3.2 · SRS 0.9</dd></div>
+              </dl>
+            </article>
+
+            <!-- CARD FOOT -->
+            <div class="entry__foot">
+              <button class="entry__step entry__step--prev" type="button" aria-label="Previous framework" disabled></button>
+              <p class="entry__state">
+                <i class="chip chip--ok" data-entry="mzn">Mizan Validated</i>
+                <i class="chip chip--ok" data-entry="ags" hidden>Aegis Active</i>
+                <i class="chip chip--held" data-entry="fhm" hidden>Swarm Deployed</i>
+                <i class="chip chip--ok" data-entry="core" hidden>3D Core Active</i>
+              </p>
+              <button class="entry__step entry__step--next" type="button" aria-label="Next framework"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ THE SYSTEM BENCHMARKS ═══════════════ -->
+    <section class="book" id="benchmarks" aria-labelledby="book-head">
+      <div class="container">
+        <div class="sheet index" data-slot="demo-2" data-alt="Empirical validation benchmarks across RAT, Aegis V13, and FEHM.AI">
+          <div class="index__top">
+            <div class="index__title">
+              <h2 id="book-head">Systems &amp; Empirical Benchmark Matrix</h2>
+              <p class="index__farm">Production AI Architecture Telemetry · Quantitative Validations Across Multi-Agent Swarms &amp; LLM Reasoning</p>
+            </div>
+            <div class="seg" role="group" aria-label="Filter benchmark evaluations">
+              <button class="seg__tab" type="button" aria-pressed="true" data-log="all">All Systems</button>
+              <button class="seg__tab" type="button" aria-pressed="false" data-log="rat">Mizan (Mistral 7B)</button>
+              <button class="seg__tab" type="button" aria-pressed="false" data-log="aegis">Aegis V13 (Disaster AI)</button>
+              <button class="seg__tab" type="button" aria-pressed="false" data-log="gate">Surge Arbitration</button>
+            </div>
+          </div>
+
+          <table class="tbl">
+            <caption class="visually-hidden">Empirical validation and performance data for Mizan, Aegis, and multi-agent systems</caption>
+            <thead>
+              <tr>
+                <th scope="col">System / Target</th>
+                <th scope="col">Domain</th>
+                <th scope="col">Evaluation Framework &amp; Setting</th>
+                <th scope="col" class="r">Verified Performance</th>
+                <th scope="col" class="r">Baseline Standard</th>
+                <th scope="col">Validation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- ROW 1 — MIZAN RAT MATRIX -->
+              <tr data-log="rat" class="is-lead">
+                <td class="num">Mizan (Mistral 7B)</td>
+                <td><i class="chip chip--kind" data-kind="med">Legal LLM</i></td>
+                <th scope="row">Adversarial Causal Cross-Attention Feature Gating (Hallucination Drop -68%, MID, SRS)</th>
+                <td class="num r">MID 3.2 / SRS 0.9</td>
+                <td class="num r">MID 1.1 / SRS 0.5</td>
+                <td><i class="chip chip--ok">Passed (↑)</i></td>
+              </tr>
+              <!-- ROW 2 — NOWSHERA D1 -->
+              <tr data-log="aegis">
+                <td class="num">Aegis: Nowshera <span class="t">D1</span></td>
+                <td><i class="chip chip--kind" data-kind="ags">Hydrology</i></td>
+                <th scope="row">Lead Time D1: Nash-Sutcliffe KGE, CSI and Recall against observed discharge</th>
+                <td class="num r">KGE 0.89 / 0.84</td>
+                <td class="num r">KGE 0.73 / 0.82</td>
+                <td><i class="chip chip--ok">CSI 0.70 / 0.41</i></td>
+              </tr>
+              <!-- ROW 3 — TARBELA D1 -->
+              <tr data-log="aegis">
+                <td class="num">Aegis: Tarbela <span class="t">D1</span></td>
+                <td><i class="chip chip--kind" data-kind="ags">Hydrology</i></td>
+                <th scope="row">Lead Time D1: Reservoir inflow prediction across 2024/2025 cycles</th>
+                <td class="num r">KGE 0.75 / 0.83</td>
+                <td class="num r">KGE -0.66 / -0.57</td>
+                <td><i class="chip chip--ok">Recall 0.69</i></td>
+              </tr>
+              <!-- ROW 4 — MANGLA D1 -->
+              <tr data-log="aegis">
+                <td class="num">Aegis: Mangla <span class="t">D1</span></td>
+                <td><i class="chip chip--kind" data-kind="ags">Hydrology</i></td>
+                <th scope="row">Lead Time D1: Extreme event capture and hydrograph fidelity pathway</th>
+                <td class="num r">Recall 0.87 / 0.76</td>
+                <td class="num r">Recall 0.55 / 0.43</td>
+                <td><i class="chip chip--ok">KGE 0.82</i></td>
+              </tr>
+              <!-- ROW 5 — CHENAB AT MARALA -->
+              <tr data-log="gate">
+                <td class="num">Aegis: Marala <span class="t">Surge</span></td>
+                <td><i class="chip chip--kind" data-kind="ags">Arbitration</i></td>
+                <th scope="row">Dynamic Arbitration Gate (Judge Desk 𝛼 modulation across &gt;16,000 m³/s surge event)</th>
+                <td class="num r">Recall 0.81 / 0.86</td>
+                <td class="num r">Recall 0.05 / 0.02</td>
+                <td><i class="chip chip--ok">𝛼≈1.0 Active</i></td>
+              </tr>
+              <!-- ROW 6 — NOWSHERA D7 -->
+              <tr data-log="aegis">
+                <td class="num">Aegis: Nowshera <span class="t">D7</span></td>
+                <td><i class="chip chip--kind" data-kind="ags">Hydrology</i></td>
+                <th scope="row">Extended Lead Time D7: Long-horizon flood forecasting and stability retention</th>
+                <td class="num r">KGE 0.79 / 0.65</td>
+                <td class="num r">KGE 0.20 / 0.27</td>
+                <td><i class="chip chip--ok">Recall 0.64</i></td>
+              </tr>
+              <!-- ROW 7 — TARBELA D7 -->
+              <tr data-log="aegis">
+                <td class="num">Aegis: Tarbela <span class="t">D7</span></td>
+                <td><i class="chip chip--kind" data-kind="ags">Hydrology</i></td>
+                <th scope="row">Extended Lead Time D7: Long-horizon stability vs ED-LSTM breakdown</th>
+                <td class="num r">Recall 0.64 / 0.64</td>
+                <td class="num r">Recall 0.06 / 0.05</td>
+                <td><i class="chip chip--ok">Aegis KGE 0.45</i></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ FIELD BAND (FLAGSHIP SHOWCASE) ═══════════════ -->
+    <section class="field-band" id="showcase" aria-labelledby="field-head">
+      <div class="field-band__pic">
+        <figure class="field-band__photo" data-slot="photo-1" data-alt="Hydrological terrain and river basin geological survey sheet">
+          <img src="images/basin_survey.jpg" width="1920" height="1080" loading="lazy" decoding="async" alt="Geological and Hydrological River Basin Survey Map">
+        </figure>
+        <div class="container field-band__in">
+          <h2 id="field-head">Flagship Case Study: Aegis AI Flood Forecasting &amp; Disaster Routing</h2>
+          <p>Real-time prediction pipeline for the Indus Basin using GEOGloWS V2 and NASA Power data. Pairwise multi-agent routing for 8km hazard zones and 25km safe shelters, combined with a bilingual conversational agent for emergency rescue operations.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ EXPERIENCE, EDUCATION & CREDENTIALS ═══════════════ -->
+    <section class="experience" id="experience" aria-labelledby="exp-head">
+      <div class="container">
+        <div class="experience__head">
+          <p class="experience__tagline"><span class="num">02</span> Background · Education &amp; Production Track Record</p>
+          <h2 id="exp-head">Education, Experience &amp; Systems Engineering</h2>
+          <p class="lead">Peer-reviewed deep learning researcher and software engineering student at HITEC University (<strong>CGPA 3.23</strong>) with independent <strong>MIT</strong> coursework and industry AI engineering internships.</p>
+        </div>
+
+        <div class="experience__grid">
+          <!-- CARD 1: RESEARCH PAPER (ACDSA 2027) -->
+          <article class="exp-card exp-card--pub" aria-label="Research Publication Details">
+            <div class="exp-card__head">
+              <span class="exp-card__badge"><i class="mark" style="background:var(--color-accent);" aria-hidden="true"></i>Accepted Paper</span>
+              <span class="chip chip--ok">ACDSA 2027</span>
+            </div>
+            <h3 class="exp-card__role">Expert Arbitration Networks: Resolving Conflicting Objectives in Deep Learning Models</h3>
+            <div class="exp-card__org">
+              <span>Int'l Conference on Advances in Computational Design &amp; Systems Applications</span>
+              <span class="exp-card__time num">Accepted · 2027</span>
+            </div>
+            <p class="exp-card__desc">
+              Pioneered an arbitration network architecture that dynamically resolves conflicting objective loss surfaces in deep neural networks. Eliminates task interference and gradient degradation during multi-objective optimization, outperforming standard Pareto-gated baselines.
+            </p>
+            <div class="exp-card__tags">
+              <span class="exp-card__tag">ACDSA 2027</span>
+              <span class="exp-card__tag">Deep Learning</span>
+              <span class="exp-card__tag">Arbitration Networks</span>
+              <span class="exp-card__tag">Multi-Objective Optimization</span>
+              <span class="exp-card__tag">Loss Geometry</span>
+              <span class="exp-card__tag">PyTorch</span>
+            </div>
+          </article>
+
+          <!-- CARD 2: MIT DEEP LEARNING CERTIFICATE -->
+          <article class="exp-card exp-card--cert" aria-label="MIT Deep Learning Credential Details">
+            <div class="exp-card__head">
+              <span class="exp-card__badge"><i class="mark" style="background:var(--color-green);" aria-hidden="true"></i>Coursework &amp; Certificate</span>
+              <span class="chip chip--ok">MIT Certified</span>
+            </div>
+            <h3 class="exp-card__role">MIT 15.773: Hands-On Deep Learning</h3>
+            <div class="exp-card__org">
+              <span>Massachusetts Institute of Technology (MIT)</span>
+              <span class="exp-card__time num">Independent Coursework · 2026</span>
+            </div>
+            <p class="exp-card__desc">
+              Rigorous independent coursework covering deep neural network architectures, representation learning, transformer self-attention mechanisms, loss surface dynamics, and deployment of production PyTorch neural models.
+            </p>
+            <div class="exp-card__tags">
+              <span class="exp-card__tag">MIT 15.773</span>
+              <span class="exp-card__tag">Deep Learning</span>
+              <span class="exp-card__tag">Transformers</span>
+              <span class="exp-card__tag">PyTorch</span>
+              <span class="exp-card__tag">Independent 2026</span>
+            </div>
+          </article>
+
+          <!-- CARD 3: EDUCATION (CGPA 3.23) -->
+          <article class="exp-card exp-card--featured" aria-label="Education Details">
+            <div class="exp-card__head">
+              <span class="exp-card__badge"><i class="mark" style="background:var(--color-green);" aria-hidden="true"></i>University Degree</span>
+              <span class="chip chip--ok">CGPA 3.23 / 4.00</span>
+            </div>
+            <h3 class="exp-card__role">B.Sc. Software Engineering</h3>
+            <div class="exp-card__org">
+              <span>HITEC University, Taxila</span>
+              <span class="exp-card__time num">Sep 2022 – July 2026</span>
+            </div>
+            <p class="exp-card__desc">
+              Rigorous engineering education covering Artificial Intelligence, Distributed Systems, Neural Network Architectures, and Database Engineering. Maintained a <strong>3.23 CGPA</strong> while conducting independent research into multi-agent swarms and adversarial legal LLM reasoning frameworks.
+            </p>
+            <div class="exp-card__tags">
+              <span class="exp-card__tag">Software Engineering</span>
+              <span class="exp-card__tag">CGPA 3.23</span>
+              <span class="exp-card__tag">HITEC Taxila</span>
+              <span class="exp-card__tag">AI Systems</span>
+              <span class="exp-card__tag">Algorithms</span>
+            </div>
+          </article>
+
+          <!-- CARD 2: NEXIUM INTERNSHIP -->
+          <article class="exp-card" aria-label="Nexium Internship Details">
+            <div class="exp-card__head">
+              <span class="exp-card__badge"><i class="mark" style="background:var(--color-accent);" aria-hidden="true"></i>Industry Experience</span>
+              <span class="chip chip--held">AI Web Dev</span>
+            </div>
+            <h3 class="exp-card__role">AI Web Dev Intern</h3>
+            <div class="exp-card__org">
+              <span>Nexium</span>
+              <span class="exp-card__time num">Jul 2025 – Aug 2025</span>
+            </div>
+            <p class="exp-card__desc">
+              Integrated LLM APIs into production web systems, shipping robust React.js components end-to-end. Translated high-fidelity Figma specifications into performant, responsive UI components within strict agile sprint cycles.
+            </p>
+            <div class="exp-card__tags">
+              <span class="exp-card__tag">React.js</span>
+              <span class="exp-card__tag">LLM APIs</span>
+              <span class="exp-card__tag">Figma</span>
+              <span class="exp-card__tag">Agile Sprints</span>
+              <span class="exp-card__tag">Frontend Systems</span>
+            </div>
+          </article>
+
+          <!-- CARD 3: ELEVVO PATHWAYS INTERNSHIP -->
+          <article class="exp-card" aria-label="Elevvo Pathways Internship Details">
+            <div class="exp-card__head">
+              <span class="exp-card__badge"><i class="mark" style="background:var(--color-accent);" aria-hidden="true"></i>Industry Experience</span>
+              <span class="chip chip--held">Design-to-Code</span>
+            </div>
+            <h3 class="exp-card__role">UX / Web Dev Intern</h3>
+            <div class="exp-card__org">
+              <span>Elevvo Pathways</span>
+              <span class="exp-card__time num">May 2025 – Jun 2025</span>
+            </div>
+            <p class="exp-card__desc">
+              Owned the full design-to-code pipeline, translating user research into deployed frontend architecture. Delivered accessible, functional front-end components and design artifacts specifically tailored for an ed-tech platform.
+            </p>
+            <div class="exp-card__tags">
+              <span class="exp-card__tag">UX Research</span>
+              <span class="exp-card__tag">Design-to-Code</span>
+              <span class="exp-card__tag">Ed-Tech</span>
+              <span class="exp-card__tag">Accessibility</span>
+              <span class="exp-card__tag">Prototyping</span>
+            </div>
+          </article>
+
+          <!-- CARD 4: GOOGLE UX CERTIFICATE -->
+          <article class="exp-card" aria-label="Google UX Certificate Details">
+            <div class="exp-card__head">
+              <span class="exp-card__badge"><i class="mark" style="background:var(--color-green);" aria-hidden="true"></i>Credential</span>
+              <span class="chip chip--ok">Certified</span>
+            </div>
+            <h3 class="exp-card__role">Google UX Design Certificate</h3>
+            <div class="exp-card__org">
+              <span>Google / Coursera</span>
+              <span class="exp-card__time num">Aug 2024</span>
+            </div>
+            <p class="exp-card__desc">
+              Completed professional 7-course specialization in foundational UX research, wireframing, usability testing, and interactive prototyping in Figma. Bridging aesthetic polish with technical software rigor.
+            </p>
+            <div class="exp-card__tags">
+              <span class="exp-card__tag">Google Certified</span>
+              <span class="exp-card__tag">Figma</span>
+              <span class="exp-card__tag">User Research</span>
+              <span class="exp-card__tag">Design Systems</span>
+            </div>
+          </article>
+        </div>
+
+        <!-- SKILLS MATRIX RIBBON -->
+        <div class="skills-ribbon">
+          <div class="skills-group">
+            <span class="skills-group__title"><i class="mark" style="background:var(--color-accent);" aria-hidden="true"></i>AI &amp; Neural Systems</span>
+            <div class="skills-group__list">
+              <span class="exp-card__tag">Python</span>
+              <span class="exp-card__tag">PyTorch</span>
+              <span class="exp-card__tag">Transformers</span>
+              <span class="exp-card__tag">Hugging Face</span>
+              <span class="exp-card__tag">Unsloth</span>
+              <span class="exp-card__tag">RAG Pipelines</span>
+              <span class="exp-card__tag">Multi-Agent LLMs</span>
+              <span class="exp-card__tag">Groq API</span>
+            </div>
+          </div>
+          <div class="skills-group">
+            <span class="skills-group__title"><i class="mark" style="background:var(--color-green);" aria-hidden="true"></i>Full-Stack &amp; Systems</span>
+            <div class="skills-group__list">
+              <span class="exp-card__tag">React.js</span>
+              <span class="exp-card__tag">Vite</span>
+              <span class="exp-card__tag">TypeScript</span>
+              <span class="exp-card__tag">FastAPI</span>
+              <span class="exp-card__tag">Redis</span>
+              <span class="exp-card__tag">Celery</span>
+              <span class="exp-card__tag">Docker</span>
+              <span class="exp-card__tag">Firebase</span>
+              <span class="exp-card__tag">Supabase</span>
+            </div>
+          </div>
+          <div class="skills-group">
+            <span class="skills-group__title"><i class="mark" style="background:var(--color-ink);" aria-hidden="true"></i>Design &amp; Architecture</span>
+            <div class="skills-group__list">
+              <span class="exp-card__tag">Figma</span>
+              <span class="exp-card__tag">UX Research</span>
+              <span class="exp-card__tag">Design Systems</span>
+              <span class="exp-card__tag">Wireframing</span>
+              <span class="exp-card__tag">Web Audio API</span>
+              <span class="exp-card__tag">Git / CI</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ ONE DAY BY THE HOUR (SCHEDULE) ═══════════════ -->
+    <section class="day" id="timeline" aria-labelledby="day-head">
+      <div class="container">
+        <div class="day__head">
+          <h2 id="day-head">One day, by the hour</h2>
+          <p class="day__date">Hydrological Season &amp; Diagnostic Pipeline Telemetry · 2024/2025 Test Cycle</p>
+        </div>
+
+        <div class="sched" role="table" aria-label="Hourly execution of diagnostic runs and hydrological telemetry">
+          <div class="sched__scale" role="row" aria-hidden="true">
+            <span class="sched__name"></span>
+            <span class="sched__hours">
+              <span class="num" style="--t:0">06:00</span>
+              <span class="num" style="--t:2">08:00</span>
+              <span class="num" style="--t:4">10:00</span>
+              <span class="num" style="--t:6">12:00</span>
+              <span class="num" style="--t:8">14:00</span>
+              <span class="num" style="--t:10">16:00</span>
+              <span class="num" style="--t:12">18:00</span>
+              <span class="num" style="--t:14">20:00</span>
+            </span>
+          </div>
+
+          <!-- TRACK 1: RAT FEATURE DIAGNOSTICS -->
+          <div class="sched__row" role="row">
+            <span class="sched__name" role="rowheader">RAT Diagnostic</span>
+            <span class="sched__track" role="cell">
+              <span data-kind="med" class="ev" style="--t:1.5">
+                <time class="num" datetime="2026-10-23T07:15">07:15</time>
+                <b>Mistral (RAT) Benchmark</b>
+                <small class="num">MID 3.2 · SRS 0.9 · CDS 0.8</small>
+              </span>
+              <span data-kind="med" class="ev" style="--t:8.2">
+                <time class="num" datetime="2026-10-23T14:10">14:10</time>
+                <b>Base vs RAT Matrix Verification</b>
+                <small class="num">EES 0.9 (Base: 0.2)</small>
+              </span>
+            </span>
+          </div>
+
+          <!-- TRACK 2: STATIONS NOWSHERA & TARBELA -->
+          <div class="sched__row" role="row">
+            <span class="sched__name" role="rowheader">Basin Forecasts</span>
+            <span class="sched__track" role="cell">
+              <span data-kind="ags" class="ev" style="--t:2.7">
+                <time class="num" datetime="2026-10-23T08:40">08:40</time>
+                <b>Indus at Tarbela D1 Cycle</b>
+                <small class="num">Aegis KGE 0.83 vs ED -0.57</small>
+              </span>
+              <span data-kind="ags" class="ev" style="--t:10.5">
+                <time class="num" datetime="2026-10-23T16:30">16:30</time>
+                <b>Kabul at Nowshera D1 Peak</b>
+                <small class="num">KGE 0.89 · CSI 0.70</small>
+              </span>
+            </span>
+          </div>
+
+          <!-- TRACK 3: MARALA SURGE ARBITRATION -->
+          <div class="sched__row" role="row">
+            <span class="sched__name" role="rowheader">Surge Arbitration</span>
+            <span class="sched__track" role="cell">
+              <span data-kind="ags" class="ev" style="--t:3.3">
+                <time class="num" datetime="2026-10-23T09:20">09:20</time>
+                <b>Jhelum at Mangla D1 Inflow</b>
+                <small class="num">Recall 0.87 vs ED 0.55</small>
+              </span>
+              <span data-kind="ags" class="ev ev--last ev--end" style="--t:13.0">
+                <time class="num" datetime="2026-10-23T19:00">19:00</time>
+                <b>Marala Surge Gate (&gt;16,000 m³/s)</b>
+                <small class="num">𝛼≈1.0 · Recall 0.86 vs ED 0.02</small>
+              </span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ INTERACTIVE ARCHITECTURE LAB ═══════════════ -->
+    <section class="inspect" id="lab" aria-labelledby="inspect-head">
+      <div class="container inspect__grid">
+        <div class="inspect__text">
+          <h2 id="inspect-head">Interactive Architecture Lab &amp; Telemetry</h2>
+          <p class="lead">Live verification of the Dynamic Judge Desk arbitration gate (𝛼-Desk) and multi-agent telemetry.</p>
+          <dl class="logs">
+            <div>
+              <dt><i class="mark" data-kind="med" aria-hidden="true"></i>Mizan Legal LLM Feature Matrix</dt>
+              <dd>Adversarial Causal Cross-Attention improves MID from 1.1 to 3.2, SRS from 0.5 to 0.9, and reduces hallucinations by 68% in Mistral 7B.</dd>
+            </div>
+            <div>
+              <dt><i class="mark" data-kind="ags" aria-hidden="true"></i>Dynamic Judge Desk (𝛼-Desk Simulation)</dt>
+              <dd>Modulates trust weight 𝛼: maintains 𝛼≈0.0 during low-flow periods for continuous hydrograph shape fidelity, and shifts to 𝛼≈1.0 during extreme surges (&gt;16,000 m³/s).</dd>
+            </div>
+            <div>
+              <dt><i class="mark" data-kind="ags" aria-hidden="true"></i>Multisite Hydrological Validation</dt>
+              <dd>Aegis V13 achieves KGE 0.89 at Nowshera and Recall 0.87 at Mangla, while standard ED-LSTM fails into negative KGE (-0.66 to -0.70).</dd>
+            </div>
+          </dl>
+
+          <!-- INTERACTIVE ARBITRATION MECHANISM SIMULATOR (FIGURE 4 LIVE) -->
+          <div class="arbitration-sim" id="arbitrationSim">
+            <div class="sim__head">
+              <h3 class="sim__title">
+                <i class="mark" data-kind="med" aria-hidden="true"></i>
+                Interactive Arbitration Simulator
+              </h3>
+              <div class="sim__regime">
+                <span class="sim__val-lbl">Trust Weight</span>
+                <span class="chip chip--held" id="simAlphaBadge">𝛼 = 0.00</span>
+              </div>
+            </div>
+            <p class="sim__desc">
+              Manipulate river discharge below to observe how the Judge Desk modulates <strong>𝛼</strong> in real-time. In winter baseflow, <strong>𝛼≈0.0</strong> preserves continuous KGE shape fidelity. When flow exceeds <strong>16,000 m³/s</strong>, <strong>𝛼→1.0</strong> triggers the Extreme-Event Recall Specialist without manual intervention.
+            </p>
+            <div class="sim__controls">
+              <div class="sim__slider-row">
+                <div class="sim__val-box">
+                  <span class="sim__val-lbl">Regime</span>
+                  <span class="sim__val-num" id="simRegimeText">Winter Baseflow</span>
+                </div>
+                <input class="sim__slider" id="simSlider" type="range" min="1200" max="22000" step="200" value="1200" aria-label="Discharge Rate in cubic meters per second">
+                <div class="sim__val-box" style="text-align: right;">
+                  <span class="sim__val-lbl">Discharge</span>
+                  <span class="sim__val-num"><span id="simFlowVal" class="num">1,200</span> m³/s</span>
+                </div>
+              </div>
+              <div class="sim__presets">
+                <span class="sim__presets-label">Preset Regimes:</span>
+                <button class="sim__preset-btn is-active" type="button" data-flow="1200" data-alpha="0.0" data-magnetic>Winter Baseflow (𝛼=0.0)</button>
+                <button class="sim__preset-btn" type="button" data-flow="7800" data-alpha="0.35" data-magnetic>Pre-Monsoon (𝛼=0.35)</button>
+                <button class="sim__preset-btn" type="button" data-flow="18400" data-alpha="1.0" data-magnetic>Monsoon Surge &gt;16k (𝛼=1.0)</button>
+              </div>
+            </div>
+            <!-- REAL-TIME HYDROGRAPH CANVAS / SVG -->
+            <div class="sim__graph-wrap">
+              <svg class="sim__graph" id="hydrographSvg" viewBox="0 0 540 140" preserveAspectRatio="none">
+                <!-- Grid hairlines -->
+                <line x1="0" y1="35" x2="540" y2="35" stroke="var(--color-rule)" stroke-dasharray="2 3"/>
+                <line x1="0" y1="70" x2="540" y2="70" stroke="var(--color-rule)" stroke-dasharray="2 3"/>
+                <line x1="0" y1="105" x2="540" y2="105" stroke="var(--color-rule)" stroke-dasharray="2 3"/>
+                <!-- Threshold Marker 16,000 m3/s -->
+                <line x1="0" y1="42" x2="540" y2="42" id="surgeGateLine" stroke="oklch(70% 0.19 40 / 0.5)" stroke-width="1.2" stroke-dasharray="4 4"/>
+                <text x="532" y="38" text-anchor="end" font-size="9" fill="var(--color-accent)" font-family="var(--font-outlier)">Surge Gate 16,000 m³/s</text>
+                <!-- Baseline ED-LSTM Curve (flattens out) -->
+                <path id="graphEdLstm" d="M 10 120 Q 140 115, 270 108 T 530 115" fill="none" stroke="var(--color-muted)" stroke-width="2" stroke-dasharray="4 3"/>
+                <!-- Aegis Predicted Curve (Dynamic) -->
+                <path id="graphAegis" d="M 10 120 Q 140 118, 270 112 T 530 118" fill="none" stroke="var(--color-accent)" stroke-width="2.5"/>
+                <!-- Observed Hydrograph (Truth) -->
+                <path id="graphObserved" d="M 10 120 Q 140 112, 270 36 T 530 112" fill="none" stroke="var(--color-ink)" stroke-width="1.8"/>
+                <!-- Live Telemetry Radar Sweep Beam -->
+                <line id="graphRadar" x1="10" y1="10" x2="10" y2="135" stroke="var(--color-accent)" stroke-width="1.2" opacity="0.45" stroke-dasharray="2 2"/>
+                <!-- Dynamic Tag Badge -->
+                <g id="graphTag" transform="translate(270, 96)">
+                  <rect x="-44" y="-18" width="88" height="18" rx="4" fill="var(--color-ink)" opacity="0.9"/>
+                  <text x="0" y="-6" text-anchor="middle" font-size="9" fill="var(--color-paper)" font-family="var(--font-outlier)" id="graphTagText">1,200 m³/s</text>
+                </g>
+                <!-- Indicator scrubber circle -->
+                <circle id="graphScrubber" cx="270" cy="112" r="6" fill="var(--color-accent)" stroke="var(--color-paper)" stroke-width="2"/>
+              </svg>
+              <div class="sim__legend">
+                <div class="sim__legend-item">
+                  <span class="sim__legend-line" style="background:var(--color-ink);"></span>
+                  <span>Observed Peak Discharge (Truth)</span>
+                </div>
+                <div class="sim__legend-item">
+                  <span class="sim__legend-line" style="background:var(--color-accent);"></span>
+                  <span style="font-weight:600; color:var(--color-ink);">Aegis V13 (Judge Desk 𝛼)</span>
+                </div>
+                <div class="sim__legend-item">
+                  <span class="sim__legend-line" style="background:var(--color-muted); border-bottom: 2px dashed var(--color-muted); height:0;"></span>
+                  <span>ED-LSTM Baseline</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid-page">
+          <!-- NOTEBOOK SPEC CARD -->
+          <div class="entry entry--still inspect__entry" data-slot="demo-3" data-alt="Technical validation parameters card" data-keep>
+            <article class="entry__page" aria-label="Empirical verification card">
+              <header class="entry__head">
+                <span class="entry__kind"><i class="mark" data-kind="med" aria-hidden="true"></i>Audit Telemetry</span>
+                <span class="entry__date num">Production Metrics</span>
+                <time class="entry__time num" datetime="2026-10-23T17:05">17:05</time>
+              </header>
+              <dl class="entry__cells">
+                <div><dt>Model Base</dt><dd>Mistral 7B (RAT)</dd></div>
+                <div><dt>Hallucination Drop</dt><dd class="num">-68% vs Base</dd></div>
+                <div><dt>Legal Matrix MID</dt><dd class="num">3.2 (Base 1.1)</dd></div>
+                <div><dt>Marala Surge Gate</dt><dd class="num">&gt;16,000 m³/s</dd></div>
+                <div><dt>Nowshera KGE</dt><dd class="num">0.89 / 0.84</dd></div>
+                <div><dt>Arbitration</dt><dd>Dynamic 𝛼-Desk</dd></div>
+              </dl>
+              <p class="entry__state" style="padding: 12px 16px 0; border: 0;">
+                <i class="chip chip--ok">System Telemetry Verified</i>
+              </p>
+            </article>
+            <div class="entry__foot entry__foot--save">
+              <button class="entry__save" type="button">Export audit log (PDF)</button>
+            </div>
+          </div>
+
+          <!-- FOLDED INSPECTION RECORD SHEET -->
+          <figure class="doc" data-slot="demo-4" data-alt="The inspection record, exported and folded" data-keep>
+            <div class="doc__sheet">
+              <span class="doc__crease" style="top: 33.33%" aria-hidden="true"></span>
+              <span class="doc__crease" style="top: 66.67%" aria-hidden="true"></span>
+              <div class="doc__top">
+                <p class="doc__title">System Dossier</p>
+                <p class="doc__farm">Aegis V13 &amp; Mizan Verification · Production Cycle <span class="num">2024–2026</span></p>
+              </div>
+
+              <p class="doc__sub">Mizan: Adversarial Hallucination Reduction Matrix</p>
+              <table class="doc__tbl">
+                <caption class="visually-hidden">Mizan Performance Matrix</caption>
+                <thead><tr><th scope="col">Model</th><th scope="col" class="r">CDS</th><th scope="col" class="r">ECS</th><th scope="col" class="r">MID</th><th scope="col" class="r">SRS</th></tr></thead>
+                <tbody>
+                  <tr><td>Base Mistral</td><td class="num r">0.3</td><td class="num r">0.6</td><td class="num r">1.1</td><td class="num r">0.5</td></tr>
+                  <tr><td>Mizan (RAT)</td><td class="num r">0.8</td><td class="num r">0.7</td><td class="num r">3.2</td><td class="num r">0.9</td></tr>
+                </tbody>
+              </table>
+
+              <p class="doc__sub">Aegis V13 vs ED-LSTM Baseline (D1 Lead Time)</p>
+              <table class="doc__tbl">
+                <caption class="visually-hidden">Aegis V13 vs ED-LSTM across stations</caption>
+                <thead><tr><th scope="col">Station</th><th scope="col" class="r">Aegis KGE</th><th scope="col" class="r">ED KGE</th><th scope="col" class="r">Aegis Recall</th><th scope="col" class="r">ED Recall</th></tr></thead>
+                <tbody>
+                  <tr><td>Tarbela</td><td class="num r">0.83</td><td class="num r">-0.57</td><td class="num r">0.69</td><td class="num r">0.00</td></tr>
+                  <tr><td>Nowshera</td><td class="num r">0.89</td><td class="num r">0.73</td><td class="num r">0.78</td><td class="num r">0.61</td></tr>
+                  <tr><td>Mangla</td><td class="num r">0.82</td><td class="num r">0.12</td><td class="num r">0.87</td><td class="num r">0.55</td></tr>
+                  <tr><td>Marala</td><td class="num r">0.63</td><td class="num r">-0.59</td><td class="num r">0.86</td><td class="num r">0.02</td></tr>
+                </tbody>
+              </table>
+
+              <p class="doc__foot">
+                <i class="chip chip--ok">Verified for Deployment</i>
+                <span class="num">HITEC SE · CGPA 3.23</span>
+              </p>
+            </div>
+            <figcaption class="visually-hidden">System dossier and empirical verification record.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ THE BAND OFFER (TANGERINE DISPATCH) ═══════════════ -->
+    <section class="band offer" id="dispatch" aria-labelledby="dispatch-head">
+      <canvas class="band__map" aria-hidden="true"></canvas>
+      <div class="container band__grid">
+        <div class="band__text">
+          <h2 id="dispatch-head">Available for AI Engineering Roles &amp; Research</h2>
+          <p class="lead">Open to AI Engineer, Machine Learning Systems, Multi-Agent Architecture, and Full-Stack AI positions worldwide.</p>
+        </div>
+        <p class="band__pin" aria-hidden="true">
+          <span class="pin__dot"></span>
+          <span class="pin__tag">Immediate Dispatch</span>
+        </p>
+
+        <div class="sheet offer__sheet">
+          <div class="offer__bill">
+            <ol class="bill">
+              <li><span>Multi-Agent Swarm Architectures (Redis + Celery)</span><span>Included</span></li>
+              <li><span>Adversarial LLM Reasoning &amp; Causal Gating</span><span>Included</span></li>
+              <li><span>Real-Time Geospatial ML &amp; Dynamic Arbitration</span><span>Included</span></li>
+              <li><span>Full-Stack Web (React, FastAPI, Docker, Figma)</span><span>Included</span></li>
+            </ol>
+            <div class="offer__foot">
+              <p class="offer__price">
+                <b>Open</b>
+                <span>Full-time roles &amp; engineering collaborations</span>
+              </p>
+            </div>
+          </div>
+
+          <!-- DISPATCH FORM -->
+          <form class="open" data-endpoint="" novalidate aria-labelledby="open-head">
+            <p class="open__head" id="open-head">Direct Engineering Dispatch</p>
+            <div class="field">
+              <label for="sender-name">Your Name or Organisation</label>
+              <input id="sender-name" name="name" type="text" autocomplete="name" required placeholder="e.g. Acme AI / Engineering Director">
+            </div>
+            <div class="field">
+              <label for="sender-email">Email Address</label>
+              <input id="sender-email" name="email" type="email" autocomplete="email" required placeholder="name@organisation.com">
+            </div>
+            <div class="field">
+              <label for="sender-msg">Role or Engineering Scope</label>
+              <textarea id="sender-msg" name="message" required placeholder="Tell me about your team or project challenge..."></textarea>
+            </div>
+            <button class="btn btn--primary" type="submit">Dispatch message</button>
+            <p class="open__help" id="open-help" aria-live="polite"></p>
+
+            <!-- DIRECT CONTACT QUICK LINKS -->
+            <div class="quick-links">
+              <a class="quick-link" href="mailto:muhammadtaha0154@gmail.com">muhammadtaha0154@gmail.com</a>
+              <a class="quick-link" href="https://github.com/taha463" target="_blank" rel="noopener">github.com/taha463</a>
+              <a class="quick-link" href="https://linkedin.com/in/muhammadtaha02" target="_blank" rel="noopener">linkedin/muhammadtaha02</a>
+              <a class="quick-link" href="tel:+923068074624">+92 306 807 4624</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════ FOOTER CLOSE ═══════════════ -->
+  <footer class="close">
+    <div class="container">
+      <p class="close__line">Systems that reason before they speak.</p>
+      <div class="close__row">
+        <nav class="close__links" aria-label="Footer Navigation">
+          <a href="#systems">Flagships</a>
+          <a href="#benchmarks">Benchmarks</a>
+          <a href="#experience">Experience &amp; CGPA</a>
+          <a href="#lab">Architecture Lab</a>
+          <a href="#dispatch">Dispatch</a>
+          <button class="link-btn" id="footerBrandLink" type="button" aria-haspopup="dialog">Brand Identity System</button>
+        </nav>
+        <p class="close__legal">© 2026 Muhammad Taha. Software Engineering · Taxila &amp; Gujranwala, Pakistan · CGPA 3.23.</p>
+      </div>
+      <p class="close__credits">
+        Built with vanilla HTML, CSS, Canvas topography &amp; GSAP animations. Press <kbd class="kbd-hint">⌘K</kbd> for System HUD.
+      </p>
+    </div>
+  </footer>
+
+  <!-- ═══════════════ AMBIENT STUDIO LIGHTING (TORCH) ═══════════════ -->
+  <div class="ambient-torch" id="ambientTorch" aria-hidden="true"></div>
+
+  <!-- ═══════════════ SYSTEM HUD / COMMAND PALETTE ═══════════════ -->
+  <div class="hud-overlay" id="hudOverlay" role="dialog" aria-modal="true" aria-label="System Command Palette" hidden>
+    <div class="hud-box">
+      <div class="hud-header">
+        <div class="hud-search-wrap">
+          <span class="hud-icon" aria-hidden="true">⌘</span>
+          <input class="hud-input" id="hudSearch" type="text" placeholder="Jump to system, benchmark, experience, or simulator..." aria-label="Search telemetry and commands">
+        </div>
+        <button class="hud-close" id="hudClose" type="button" aria-label="Close command palette">✕</button>
+      </div>
+      <div class="hud-body">
+        <p class="hud-group-label">Quick Navigation &amp; Telemetry</p>
+        <div class="hud-items" id="hudItems">
+          <a class="hud-item is-focused" href="#systems" data-hud-id="systems">
+            <span class="hud-badge">01</span>
+            <span class="hud-label"><strong>Hero &amp; Flagship Systems</strong> (Mizan, Aegis, FEHM.AI)</span>
+            <kbd class="hud-key">Hero</kbd>
+          </a>
+          <a class="hud-item" href="#benchmarks" data-hud-id="table2">
+            <span class="hud-badge">02</span>
+            <span class="hud-label"><strong>Systems Benchmark Matrix</strong> (Hallucination -68%, KGE 0.89)</span>
+            <kbd class="hud-key">Matrix</kbd>
+          </a>
+          <a class="hud-item" href="#experience" data-hud-id="experience">
+            <span class="hud-badge">03</span>
+            <span class="hud-label"><strong>Experience &amp; Education</strong> (HITEC SE CGPA 3.23, Nexium, Elevvo)</span>
+            <kbd class="hud-key">Education</kbd>
+          </a>
+          <a class="hud-item" href="#lab" data-hud-id="sim">
+            <span class="hud-badge">04</span>
+            <span class="hud-label"><strong>Interactive Architecture Lab</strong> (Dynamic 𝛼-Desk Simulator)</span>
+            <kbd class="hud-key">Lab</kbd>
+          </a>
+          <a class="hud-item" href="#timeline" data-hud-id="timeline">
+            <span class="hud-badge">05</span>
+            <span class="hud-label"><strong>Pipeline Execution &amp; Telemetry</strong> (Hourly System Runs)</span>
+            <kbd class="hud-key">Timeline</kbd>
+          </a>
+          <a class="hud-item" href="#dispatch" data-hud-id="dispatch">
+            <span class="hud-badge">06</span>
+            <span class="hud-label"><strong>Dispatch Inquiry &amp; Contact</strong> (Direct Message Form)</span>
+            <kbd class="hud-key">Contact</kbd>
+          </a>
+          <button class="hud-item" id="hudBrandTrigger" type="button" data-hud-id="brand">
+            <span class="hud-badge">07</span>
+            <span class="hud-label"><strong>Brand Identity System</strong> (MT Monogram &amp; Aperture)</span>
+            <kbd class="hud-key">Brand</kbd>
+          </button>
+        </div>
+      </div>
+      <div class="hud-footer">
+        <span>Use <kbd>↑</kbd> <kbd>↓</kbd> to navigate</span>
+        <span><kbd>Enter</kbd> to select</span>
+        <span><kbd>Esc</kbd> to dismiss</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════ BRAND IDENTITY SYSTEM MODAL ═══════════════ -->
+  <div class="brand-modal-overlay" id="brandModalOverlay" role="dialog" aria-modal="true" aria-label="Muhammad Taha Brand Identity System" hidden>
+    <div class="brand-modal-box">
+      <div class="brand-modal-head">
+        <div>
+          <span class="entry__kind"><i class="mark" style="background:var(--color-accent);" aria-hidden="true"></i>Brand System</span>
+          <h3 class="brand-modal-title">The Arbitration Aperture Monogram</h3>
+        </div>
+        <button class="hud-close" id="brandModalClose" type="button" aria-label="Close brand dialog">✕</button>
+      </div>
+      <div class="brand-modal-body">
+        <div class="brand-modal-grid">
+          <div class="brand-modal-spec">
+            <div class="brand-symbol-hero">
+              <svg viewBox="0 0 256 256" width="120" height="120" aria-label="Brand Mark Master">
+                <path fill="var(--color-ink)" fill-rule="evenodd" d="M 36 48 L 220 48 C 224.4 48 228 51.6 228 56 L 228 80 C 228 84.4 224.4 88 220 88 L 196 88 L 196 196 C 196 202.6 190.6 208 184 208 L 164 208 C 157.4 208 152 202.6 152 196 L 152 118 L 142 128 L 142 196 C 142 202.6 136.6 208 130 208 L 126 208 C 119.4 208 114 202.6 114 196 L 114 128 L 104 118 L 104 196 C 104 202.6 98.6 208 92 208 L 72 208 C 65.4 208 60 202.6 60 196 L 60 88 L 36 88 C 31.6 88 28 84.4 28 80 L 28 56 C 28 51.6 31.6 48 36 48 Z M 104 88 L 152 88 L 128 112 Z"/>
+                <circle cx="128" cy="156" r="14" fill="var(--color-accent)"/>
+              </svg>
+            </div>
+            <p class="brand-modal-desc">
+              Constructed on an integer 256×256 canvas with 16-unit modular divisions. Unites the initials <strong>M</strong> and <strong>T</strong> into an architectural monument of reasoning, punctuated by a central negative-space aperture containing the focal illuminated tangerine truth core.
+            </p>
+            <div class="brand-swatches">
+              <div class="brand-swatch">
+                <span class="swatch-color" style="background:#1a1816;"></span>
+                <span class="swatch-info"><strong>Ink 60</strong><br><code>oklch(18% 0.006 60)</code></span>
+              </div>
+              <div class="brand-swatch">
+                <span class="swatch-color" style="background:#e0572b;"></span>
+                <span class="swatch-info"><strong>Tangerine</strong><br><code>oklch(70% 0.19 40)</code></span>
+              </div>
+              <div class="brand-swatch">
+                <span class="swatch-color" style="background:#f5f1eb; border: 1px solid var(--color-rule);"></span>
+                <span class="swatch-info"><strong>Paper Light</strong><br><code>oklch(96% 0.011 85)</code></span>
+              </div>
+            </div>
+          </div>
+          <div class="brand-modal-variants">
+            <h4 class="brand-subhead">Production Delivery Variants</h4>
+            <div class="variants-row">
+              <div class="variant-card" style="background:var(--color-paper-2);">
+                <span class="variant-tag">Master 2-Color</span>
+                <img src="images/logo.svg" alt="Master SVG" width="48" height="48">
+              </div>
+              <div class="variant-card" style="background:#1a1816; color:#ffffff;">
+                <span class="variant-tag" style="color:var(--color-muted);">Reversed White</span>
+                <img src="brand/variants/taha-mark-white.svg" alt="White SVG" width="48" height="48">
+              </div>
+              <div class="variant-card" style="background:var(--color-paper-2);">
+                <span class="variant-tag">One-Color Black</span>
+                <img src="brand/variants/taha-mark-black.svg" alt="Black SVG" width="48" height="48">
+              </div>
+              <div class="variant-card" style="background:var(--color-paper-2);">
+                <span class="variant-tag">App Icon Tile</span>
+                <img src="brand/variants/taha-mark-app-icon.svg" alt="App Icon SVG" width="48" height="48">
+              </div>
+            </div>
+            <div class="brand-actions">
+              <a class="btn btn--sm" href="brand/concepts.png" target="_blank" rel="noopener">Inspect Concept Sheet (PNG)</a>
+              <a class="btn btn--sm btn--primary" href="brand/presentation.html" target="_blank" rel="noopener">Open Presentation Board</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="main.js" defer></script>
+</body>
+</html>
