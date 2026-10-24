@@ -1,6 +1,6 @@
 [build]
   publish = "portfolio-site"
-  command = "pnpm run test:assets && pnpm run test:portfolio"
+  command = "node scripts/validate-assets.mjs && node scripts/test-portfolio.mjs"
 
 [[headers]]
   for = "/*"
