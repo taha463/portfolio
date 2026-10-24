@@ -711,10 +711,10 @@ export default function Home() {
 
             <FadeUp delay={0.12} className="space-y-4 text-sm text-foreground/65 leading-[1.85] mb-8">
               <p>
-                Software Engineering student at HITEC University, Taxila — CGPA 3.20 / 4.00, graduating July 2026. Working at the intersection of AI architecture and product design.
+                Software Engineering student at HITEC University, Taxila — CGPA 3.23 / 4.00, graduating July 2026. Author of <em>Expert Arbitration Networks: Resolving Conflicting Objectives in Deep Learning Models</em> (Accepted at ACDSA 2027).
               </p>
               <p>
-                Holder of the Google UX Design Professional Certificate. I bring a designer's sensibility to engineering work and an engineer's precision to design work.
+                Completed independent technical coursework in <em>MIT 15.773: Hands-On Deep Learning</em> (2026) and holder of the Google UX Design Professional Certificate. Working at the intersection of AI systems architecture and product design.
               </p>
             </FadeUp>
 
@@ -730,7 +730,7 @@ export default function Home() {
           {/* Experience */}
           <div>
             <RevealLine>
-              <span className="font-mono text-[0.6rem] text-primary tracking-[0.22em] uppercase">Experience</span>
+              <span className="font-mono text-[0.6rem] text-primary tracking-[0.22em] uppercase">Experience &amp; Research</span>
             </RevealLine>
             <RevealLine delay={0.07}>
               <h2 className="font-serif text-4xl md:text-5xl text-foreground mt-1 mb-8">Timeline</h2>
@@ -738,6 +738,31 @@ export default function Home() {
 
             <div className="border-l border-border ml-2 space-y-0">
               {[
+                {
+                  date: "Accepted · 2027",
+                  role: "Research Paper Author — ACDSA 2027",
+                  company: "Int'l Conf. on Advances in Computational Design & Systems Applications",
+                  items: [
+                    "Authored 'Expert Arbitration Networks: Resolving Conflicting Objectives in Deep Learning Models'.",
+                    "Pioneered arbitration networks that dynamically resolve conflicting loss surfaces, eliminating negative task gradient interference.",
+                  ],
+                },
+                {
+                  date: "2026",
+                  role: "MIT 15.773: Hands-On Deep Learning",
+                  company: "Massachusetts Institute of Technology (Independent Coursework)",
+                  items: [
+                    "Mastered backpropagation dynamics, transformer attention mechanics, loss curvature optimization, and representation learning in PyTorch.",
+                  ],
+                },
+                {
+                  date: "Sep 2022 – Jul 2026",
+                  role: "B.Sc. Software Engineering (CGPA 3.23)",
+                  company: "HITEC University, Taxila",
+                  items: [
+                    "Maintained a 3.23 CGPA while conducting independent research into multi-agent swarms and adversarial legal LLM reasoning frameworks.",
+                  ],
+                },
                 {
                   date: "Jul – Aug 2025",
                   role: "AI Web Dev Intern",
