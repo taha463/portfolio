@@ -906,6 +906,20 @@ section[id],
   height: clamp(9.5rem, 15vw, 13rem);
 }
 
+.credit {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 0 var(--gutter) 2.25rem;
+  font-size: 0.9rem;
+  color: var(--color-ink-soft);
+}
+
+.credit a {
+  color: var(--color-ink);
+  font-weight: 500;
+}
+
 .lightbox {
   position: fixed;
   inset: 0;

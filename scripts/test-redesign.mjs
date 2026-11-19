@@ -65,7 +65,6 @@ test('Removed forbidden copy and deprecated UI controls from index.html', () => 
   const forbidden = [
     /\bbread\b/i,
     /\bbakery\b/i,
-    /Greg Skriloff/i,
     /\bCGPA\b/i,
     /⌘K/,
     /Reset desk/i,
@@ -105,7 +104,8 @@ test('Required sections, real GitHub repos, and 3 social links exist in index.ht
     '0.6623',
     '46.67%',
     'KGE 0.89',
-    'Lahore',
+    'Design inspired by',
+    'https://gregskril.com/',
   ];
   for (const token of required) {
     assert.ok(html.includes(token), `Missing expected content: ${token}`);
