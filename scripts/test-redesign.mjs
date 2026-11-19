@@ -159,6 +159,13 @@ test('Portfolio core exposes pure deterministic logic for knot, path, time, and 
   assert.ok(pathStr.includes(' Q '), 'Expected smooth quadratic curve segments');
 });
 
+test('Unhashed CSS and JS are not marked immutable in netlify.toml and use cache-busting query params', () => {
+  const netlify = fs.readFileSync(path.resolve('netlify.toml'), 'utf8');
+  assert.equal(/immutable/i.test(netlify), false, 'Found immutable cache header on unhashed assets in netlify.toml');
+  assert.match(html, /href=["']style\.css\?v=\d+["']/i);
+  assert.match(html, /src=["']main\.js\?v=\d+["']/i);
+});
+
 console.log(`\nRedesign suite: ${passed} passed, ${failed} failed`);
 if (failed > 0) {
   process.exit(1);

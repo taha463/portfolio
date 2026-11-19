@@ -17,8 +17,8 @@ const criticalChecks = [
   { name: 'Character Set UTF-8', regex: /<meta\s+charset=["']utf-8["']/i },
   { name: 'Meta Description', regex: /<meta\s+name=["']description["']/i },
   { name: 'Page Title', regex: /<title>[^<]+<\/title>/i },
-  { name: 'Stylesheet Link', regex: /<link\s+rel=["']stylesheet["']\s+href=["']style\.css["']/i },
-  { name: 'Main Script Link', regex: /<script\s+[^>]*src=["']main\.js["'][^>]*>/i },
+  { name: 'Stylesheet Link', regex: /<link\s+rel=["']stylesheet["']\s+href=["']style\.css(?:\?[^"']*)?["']/i },
+  { name: 'Main Script Link', regex: /<script\s+[^>]*src=["']main\.js(?:\?[^"']*)?["'][^>]*>/i },
   { name: 'Skip Link for Accessibility', regex: /<a\s+class=["']skip["']\s+href=["']#main["']/i },
   { name: 'Main Content Landmark', regex: /<main\s+id=["']main["']/i },
 ];
