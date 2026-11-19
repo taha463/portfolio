@@ -1,6 +1,6 @@
 [build]
   publish = "portfolio-site"
-  command = "pnpm run test:assets && pnpm run test:portfolio"
+  command = "pnpm run test"
 
 [[headers]]
   for = "/*"

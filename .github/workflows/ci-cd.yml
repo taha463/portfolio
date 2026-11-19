@@ -41,6 +41,9 @@ jobs:
       - name: Run automated portfolio test suite
         run: pnpm run test:portfolio
 
+      - name: Run redesign and no-comment test suite
+        run: pnpm run test:redesign
+
       - name: Verify JavaScript syntax & node parse
         run: node -c portfolio-site/main.js
 

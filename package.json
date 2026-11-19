@@ -4,12 +4,14 @@
   "packageManager": "pnpm@9.15.0",
   "license": "MIT",
   "scripts": {
+    "dev": "node scripts/dev.mjs",
     "build": "pnpm run typecheck && pnpm -r --if-present run build",
     "typecheck:libs": "tsc --build",
     "typecheck": "pnpm run typecheck:libs && pnpm -r --filter \"./artifacts/**\" --filter \"./scripts\" --if-present run typecheck",
     "test:assets": "node scripts/validate-assets.mjs",
     "test:portfolio": "node scripts/test-portfolio.mjs",
-    "test": "pnpm run test:assets && pnpm run test:portfolio"
+    "test:redesign": "node scripts/test-redesign.mjs",
+    "test": "pnpm run test:assets && pnpm run test:portfolio && pnpm run test:redesign"
   },
   "private": true,
   "devDependencies": {

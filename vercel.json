@@ -1,6 +1,6 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "buildCommand": "pnpm run test:assets && pnpm run test:portfolio",
+  "buildCommand": "pnpm run test",
   "outputDirectory": "portfolio-site",
   "cleanUrls": true,
   "trailingSlash": false,
